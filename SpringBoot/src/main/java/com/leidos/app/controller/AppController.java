@@ -56,7 +56,6 @@ public class AppController {
 	@GetMapping("/team/{id}")
 	public ResponseEntity<AppEntity> getTeamById(@PathVariable("id") long id) {
 		Optional<AppEntity> teamRec = appRepository.findById(id);
-		
 
 		if (teamRec.isPresent()) {
 			return new ResponseEntity<>(teamRec.get(), HttpStatus.OK);
